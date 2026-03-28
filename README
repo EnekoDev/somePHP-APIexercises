@@ -1,0 +1,326 @@
+# 🟢 Beginner (PHP + API Fundamentals)
+
+### 1. First API Call in PHP
+
+Use JSONPlaceholder
+
+**Exercises:**
+
+* Fetch posts
+* Print titles
+
+**Test Ideas (no code):**
+
+* What happens if the API URL is wrong?
+* What if the API returns empty data?
+* Do you handle invalid JSON?
+* Does your script crash if the network fails?
+
+---
+
+### 2. Use cURL Properly
+
+**Exercises:**
+
+* Build a reusable API function
+* Return status code + response
+
+**Test Ideas:**
+
+* Does it correctly detect:
+
+  * 200 OK
+  * 404 Not Found
+  * 500 Server Error
+* What happens on timeout?
+* Does it retry or fail silently?
+
+---
+
+### 3. Handle GET Parameters
+
+**Exercises:**
+
+* `/index.php?post_id=1`
+
+**Test Ideas:**
+
+* Missing parameter → does it fail gracefully?
+* Invalid ID (e.g., string instead of number)
+* Extremely large ID
+* Injection attempt (`?post_id=1 OR 1=1`)
+
+---
+
+### 4. Send POST Requests
+
+**Exercises:**
+
+* Create a post via API
+
+**Test Ideas:**
+
+* Missing required fields
+* Invalid data types
+* Sending empty body
+* Does API return what you sent?
+
+---
+
+# 🟡 Intermediate (Building APIs in PHP)
+
+### 5. Build Your First API (No Framework)
+
+**Exercises:**
+
+* CRUD endpoints
+
+**Test Ideas:**
+
+* GET empty list → correct response?
+* GET non-existing ID → 404?
+* DELETE same resource twice → what happens?
+* POST duplicate data → allowed or rejected?
+
+---
+
+### 6. Use an API Key
+
+With OpenWeatherMap API
+
+**Exercises:**
+
+* Fetch weather with API key
+
+**Test Ideas:**
+
+* Invalid API key → proper error?
+* Missing key → blocked?
+* Rate limit exceeded → handled?
+* Wrong city name → correct response?
+
+---
+
+### 7. JSON Responses & Headers
+
+**Exercises:**
+
+* Return JSON + status codes
+
+**Test Ideas:**
+
+* Is `Content-Type` always correct?
+* Does every response have valid JSON?
+* Are status codes consistent (200, 400, 404)?
+* Do errors return structured JSON?
+
+---
+
+### 8. Error Handling
+
+**Exercises:**
+
+* Handle failures properly
+
+**Test Ideas:**
+
+* Simulate API downtime
+* Simulate malformed responses
+* Does your API leak internal errors?
+* Are error messages useful but not insecure?
+
+---
+
+### 9. Simple Router
+
+**Exercises:**
+
+* Dynamic routes (`/users/1`)
+
+**Test Ideas:**
+
+* Invalid route → 404?
+* Similar routes (`/users` vs `/users/`)
+* Unsupported method (POST on GET route)
+* Special characters in URL
+
+---
+
+# 🟠 Advanced (Real Backend Systems)
+
+### 10. Use a Framework
+
+Using Laravel or Symfony
+
+**Exercises:**
+
+* Build structured API
+
+**Test Ideas:**
+
+* Do controllers return consistent formats?
+* Middleware blocking unauthorized users?
+* Route conflicts?
+* Dependency injection errors?
+
+---
+
+### 11. Database Integration
+
+Using MySQL or PostgreSQL
+
+**Exercises:**
+
+* Store and retrieve data
+
+**Test Ideas:**
+
+* Insert invalid data
+* Query non-existent records
+* Large dataset performance
+* Database connection failure
+
+---
+
+### 12. Authentication (JWT)
+
+Using JWT
+
+**Exercises:**
+
+* Login + protected routes
+
+**Test Ideas:**
+
+* Expired token
+* Invalid signature
+* Missing token
+* Token tampering attempt
+
+---
+
+### 13. Validation & Security
+
+**Exercises:**
+
+* Input validation
+
+**Test Ideas:**
+
+* SQL injection attempts
+* XSS payloads (`<script>`)
+* Very long inputs
+* Missing required fields
+
+---
+
+### 14. API Documentation
+
+Using Swagger
+
+**Exercises:**
+
+* Document endpoints
+
+**Test Ideas:**
+
+* Docs match actual API?
+* Missing endpoints?
+* Wrong request/response examples?
+* Can someone use your API only from docs?
+
+---
+
+# 🔴 Expert (Production-Level APIs)
+
+### 15. Full API Project (E-commerce)
+
+**Exercises:**
+
+* Users, products, orders
+
+**Test Ideas:**
+
+* Order without stock
+* Concurrent orders (race conditions)
+* User accessing another user’s data
+* Price manipulation attempts
+
+---
+
+### 16. Caching
+
+Using Redis
+
+**Exercises:**
+
+* Cache responses
+
+**Test Ideas:**
+
+* Cache invalidation (stale data)
+* Cache miss vs hit behavior
+* Cache server down
+* Sensitive data accidentally cached?
+
+---
+
+### 17. Rate Limiting
+
+**Exercises:**
+
+* Limit requests
+
+**Test Ideas:**
+
+* Burst traffic (spam requests)
+* Reset timing accuracy
+* Different users vs same IP
+* Bypass attempts
+
+---
+
+### 18. API Versioning
+
+**Exercises:**
+
+* `/v1/` vs `/v2/`
+
+**Test Ideas:**
+
+* Old version still works?
+* Breaking changes handled?
+* Mixed version usage
+* Deprecated endpoints behavior
+
+---
+
+### 19. Testing Strategy
+
+Using PHPUnit
+
+**Exercises:**
+
+* Unit + integration tests
+
+**Test Ideas:**
+
+* Do tests cover edge cases?
+* Are failures meaningful?
+* Do tests depend on external APIs?
+* Can tests run in isolation?
+
+---
+
+### 20. Deployment
+
+**Exercises:**
+
+* Deploy API
+
+**Test Ideas:**
+
+* Environment variables missing
+* Production vs development configs
+* HTTPS enforced?
+* Logging working?
