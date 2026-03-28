@@ -1,7 +1,8 @@
 {
     "name": "eneko/php-api",
     "require": {
-        "phpunit/phpunit": "^13.0"
+        "phpunit/phpunit": "^13.0",
+        "guzzlehttp/guzzle": "^7.10"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit tests --display-warnings"
