@@ -4,27 +4,30 @@ use GuzzleHttp\Handler\MockHandler;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . "/../src/beginner/firstCall.php";
+require "vendor/autoload.php";
 
 class FirstCallTest extends TestCase {
     private FirstCall $call;
-    private MockHandler $mock;
+    private $client;
 
     public function setUp(): void {
         $this->call = new FirstCall();
-        $this->mock = new MockHandler();
+        $this->client = new GuzzleHttp\Client(["baseURI" => $this->call->getBaseURI()]);
     }
 
     public function testEmptyData() {
-        $req = $this->call->getData("fakeData");
+        $this->call->setRequest("/fake");
+        $req = $this->call->fetchData();
         $this->assertJSON($req);
     }
 
     public function testInvalidJSON() {
-        $req = $this->call->getData("posts");
+        $this->call->setRequest("/todos");
+        $req = $this->call->fetchData();
         $this->assertArrayHasKey("data", $req);
     }
 
     public function testNetworkFail() {
-        $req = $this->call->$data = $form->getData();
+        
     }
 }
